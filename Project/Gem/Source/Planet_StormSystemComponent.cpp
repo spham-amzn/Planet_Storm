@@ -5,8 +5,13 @@
 
 #include "Planet_StormSystemComponent.h"
 
+#include <Planet_Storm/Planet_StormTypeIds.h>
+
 namespace Planet_Storm
 {
+    AZ_COMPONENT_IMPL(Planet_StormSystemComponent, "Planet_StormSystemComponent",
+        Planet_StormSystemComponentTypeId);
+
     void Planet_StormSystemComponent::Reflect(AZ::ReflectContext* context)
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))

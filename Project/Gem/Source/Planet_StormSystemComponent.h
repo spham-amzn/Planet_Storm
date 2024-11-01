@@ -5,6 +5,8 @@
 
 #include <Planet_Storm/Planet_StormBus.h>
 
+#include <Planet_Storm/Planet_StormTypeIds.h>
+
 namespace Planet_Storm
 {
     class Planet_StormSystemComponent
@@ -12,7 +14,7 @@ namespace Planet_Storm
         , protected Planet_StormRequestBus::Handler
     {
     public:
-        AZ_COMPONENT(Planet_StormSystemComponent, "{6d1e1f5c-4dfc-4e90-8efd-62c5951ca555}");
+        AZ_COMPONENT_DECL(Planet_StormSystemComponent);
 
         static void Reflect(AZ::ReflectContext* context);
 

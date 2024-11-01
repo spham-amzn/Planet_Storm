@@ -1,8 +1,9 @@
-
 #include <AzCore/Memory/SystemAllocator.h>
 #include <AzCore/Module/Module.h>
 
 #include "Planet_StormSystemComponent.h"
+
+#include <Planet_Storm/Planet_StormTypeIds.h>
 
 namespace Planet_Storm
 {
@@ -10,8 +11,8 @@ namespace Planet_Storm
         : public AZ::Module
     {
     public:
-        AZ_RTTI(Planet_StormModule, "{7bbabbaf-3c31-4372-90c8-272fd87b189a}", AZ::Module);
-        AZ_CLASS_ALLOCATOR(Planet_StormModule, AZ::SystemAllocator, 0);
+        AZ_RTTI(Planet_StormModule, Planet_StormModuleTypeId, AZ::Module);
+        AZ_CLASS_ALLOCATOR(Planet_StormModule, AZ::SystemAllocator);
 
         Planet_StormModule()
             : AZ::Module()
@@ -34,4 +35,8 @@ namespace Planet_Storm
     };
 }// namespace Planet_Storm
 
+#if defined(O3DE_GEM_NAME)
+AZ_DECLARE_MODULE_CLASS(AZ_JOIN(Gem_, O3DE_GEM_NAME), Planet_Storm::Planet_StormModule)
+#else
 AZ_DECLARE_MODULE_CLASS(Gem_Planet_Storm, Planet_Storm::Planet_StormModule)
+#endif

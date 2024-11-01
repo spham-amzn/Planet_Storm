@@ -4,12 +4,14 @@
 #include <AzCore/EBus/EBus.h>
 #include <AzCore/Interface/Interface.h>
 
+#include <Planet_Storm/Planet_StormTypeIds.h>
+
 namespace Planet_Storm
 {
     class Planet_StormRequests
     {
     public:
-        AZ_RTTI(Planet_StormRequests, "{3d6fc5ea-5da3-4e32-98a5-6f7adc92604d}");
+        AZ_RTTI(Planet_StormRequests, Planet_StormRequestsTypeId);
         virtual ~Planet_StormRequests() = default;
         // Put your public methods here
     };
